@@ -8,9 +8,6 @@ class NewsList extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = StoriesProvider.of(context);
 
-    //this is bad!!!
-    bloc.fetchTopIds();
-
     return Scaffold(
       appBar: AppBar(
         title: Text("Top News"),
@@ -29,7 +26,7 @@ class NewsList extends StatelessWidget {
           );
         }
 
-        return Refresh (
+        return Refresh(
           child: ListView.builder(
             itemCount: snapshot.data.length,
             itemBuilder: (context, int index) {
